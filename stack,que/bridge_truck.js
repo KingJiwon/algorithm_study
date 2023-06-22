@@ -1,15 +1,40 @@
 function solution(bridge_length, weight, truck_weights) {
-  const crossingBridge = [];
-  const crossedBridge = [];
+  const bridge = new Array(bridge_length).fill(0);
+  const truck_crossed = [];
   let time = 0;
-  while (truck_weights.length !== 0) {
-    const shift = truck_weights.shift();
-    const push = crossingBridge.push(shift);
-    console.log("Waiting :", truck_weights);
-    console.log("Crossing :", crossingBridge);
-    const shiftTwo = crossingBridge.shift();
-    const pushTwo = crossedBridge.push(shiftTwo);
-    console.log("Crossed :", crossedBridge);
+  let bridgeShift = null;
+  while (true) {
+    const bridgeWeight = bridge.reduce((acc, cur) => {
+      return acc + cur;
+    });
+    if (bridgeWeight === 0 && truck_weights.length === 0) {
+      break;
+    }
+    bridgeShift = bridge.shift();
+    if (bridgeShift !== 0) {
+      const shiftedBridgeWeight = bridge.reduce((acc, cur) => {
+        return acc + cur;
+      });
+      truck_crossed.push(bridgeShift);
+      if (shiftedBridgeWeight + truck_weights[0] <= weight) {
+        bridge.push(truck_weights.shift());
+      } else {
+        bridge.push(0);
+      }
+    } else {
+      if (bridgeWeight + truck_weights[0] <= weight) {
+        bridge.push(truck_weights.shift());
+      } else {
+        bridge.push(0);
+      }
+    }
+
+    time += 1;
+
+    console.log("truck_crossed :", truck_crossed);
+    console.log("bridge :", bridge);
+    console.log("truck_waitng :", truck_weights);
+    console.log("time :", time);
   }
+  return time;
 }
-solution(2, 10, [7, 4, 5, 6]);
