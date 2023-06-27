@@ -43,37 +43,3 @@ function solution(bridge_length, weight, truck_wating) {
   }
   return time;
 }
-
-// function solution(bridge_length, weight, truck_weights) {
-//     const bridge = new Array(bridge_length).fill(0);
-//     const truck_crossed = [];
-//     let time = 0;
-//     while (true) {
-//       const bridgeWeight = bridge.reduce((acc, cur) => {
-//         return acc + cur;
-//       });
-//       if (bridgeWeight === 0 && truck_weights.length === 0) {
-//         break;
-//       }
-//       const bridgeShift = bridge.shift();
-//       if (bridgeShift !== 0) {
-//         const shiftedBridgeWeight = bridge.reduce((acc, cur) => {
-//           return acc + cur;
-//         });
-//         truck_crossed.push(bridgeShift);
-//         if (shiftedBridgeWeight + truck_weights[0] <= weight) {
-//           bridge.push(truck_weights.shift());
-//         } else {
-//           bridge.push(0);
-//         }
-//       } else {
-//         if (bridgeWeight + truck_weights[0] <= weight) {
-//           bridge.push(truck_weights.shift());
-//         } else {
-//           bridge.push(0);
-//         }
-//       }
-//       time += 1;
-//     }
-//     return time;
-//   }
