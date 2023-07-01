@@ -1,18 +1,18 @@
 function solution(clothes) {
-  const object = {};
-  const arr = [];
+  const countObject = {};
+  const countArr = [];
   clothes.map((el) => {
-    if (object[el[1]]) {
-      object[el[1]] += 1;
+    if (countObject[el[1]]) {
+      countObject[el[1]] += 1;
     } else {
-      object[el[1]] = 1;
+      countObject[el[1]] = 1;
     }
   });
-  for (let key in object) {
-    arr.push(object[key]);
+  for (let key in countObject) {
+    countArr.push(countObject[key]);
   }
   const answer =
-    arr.reduce((acc, cur) => {
+    countArr.reduce((acc, cur) => {
       return (acc *= cur + 1);
     }, 1) - 1;
   return answer;
