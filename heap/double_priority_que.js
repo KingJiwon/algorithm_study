@@ -1,4 +1,1 @@
-function solution(operations) {
-  var answer = [];
-  return answer;
-}
+function solution(operations) {}
