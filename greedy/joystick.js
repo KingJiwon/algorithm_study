@@ -18,7 +18,7 @@ function solution(name) {
       idx * 2 + name.length - nextIdx,
       2 * (name.length - nextIdx) + idx
     );
+    console.log(lrMove);
   });
   return udMove + lrMove;
 }
-// BBBAAAABBAA
