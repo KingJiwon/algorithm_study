@@ -12,12 +12,13 @@ function solution(k, dungeons) {
       ]);
       results.push(...attatched);
     });
+    console.log(results);
     return results;
   }
   const result = [];
   const permutations = getPermutations(dungeons, dungeons.length);
   // 모든 경우에 대하여 조건에 따라 던전을 몇개 진행 할 수 있는지 구하기
-  permutations.map((el, idx) => {
+  permutations.map((el) => {
     let count = 0;
     fatigueLevel = k;
     el.map((el) => {
@@ -26,15 +27,10 @@ function solution(k, dungeons) {
         fatigueLevel -= el[1];
       }
     });
+    console.log(result);
     result.push(count);
   });
+
   // 가장 많이 진행하는 경우를 return
   return Math.max(...result);
 }
-// console.log(
-//   solution(80, [
-//     [80, 20],
-//     [50, 40],
-//     [30, 10],
-//   ])
-// );
