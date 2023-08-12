@@ -51,9 +51,7 @@ rl.on("close", () => {
   }
 
   const goDistnace = dijkstra(goGraph);
-  console.log(goDistnace);
   const backDistance = dijkstra(backGraph);
-  console.log(backDistance);
 
   let max = 0;
   for (let i = 1; i <= n; i++) {
