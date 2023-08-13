@@ -51,4 +51,3 @@ while (queue.length) {
     }
   });
 }
-console.log(dist);
