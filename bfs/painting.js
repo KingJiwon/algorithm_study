@@ -1,3 +1,5 @@
+function calcPainting(paintings) {}
+
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -22,5 +24,6 @@ rl.on("line", (line) => {
 });
 
 rl.on("close", () => {
+  calcPainting(paintings);
   process.exit();
 });
