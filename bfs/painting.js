@@ -77,7 +77,7 @@ rl.on("close", () => {
       }
     }
   }
-  console.log(paintings);
+
   console.log(paintings_matrix);
   console.log(visited);
   console.log(countedPainting);
