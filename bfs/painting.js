@@ -78,7 +78,6 @@ rl.on("close", () => {
     }
   }
 
-  console.log(paintings_matrix);
   console.log(visited);
   console.log(countedPainting);
   console.log(Math.max(...countedArea));
