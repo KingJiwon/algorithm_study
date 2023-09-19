@@ -27,16 +27,16 @@ rl.on("close", () => {
   cave.forEach((val, idx) => {
     //길이별로 석순, 종유석 몇 개 있는지 나누기
     if (idx % 2 === 0) {
-      bottom[parseInt(val)]++; //길이별로 석순 배열 [0,1,0,1,0,1,0,0] index 1부터 바닥
+      bottom[parseInt(val)]++; //길이별로 석순 배열  index 1부터 바닥
     } else {
-      top[info[1] - parseInt(val) + 1]++; //길이별로 종유석 배열(반대방향) [0,0,0,1,0,1,0,1]
+      top[info[1] - parseInt(val) + 1]++; //길이별로 종유석 배열(반대방향)
     }
   });
 
   for (let i = 1; i <= info[1]; i += 1) {
     // 누적합으로 석순/종유석 각각 구간마다 몇개 부딫히는지 구하기
-    bottom[info[1] - i] += bottom[info[1] - i + 1]; //뒤에서부터 누적합 구하기(석순) [3,3,2,2,1,1,0,0]
-    top[i] += top[i - 1]; // 앞에서부터 부분합 구하기 (종유석) [0,0,0,1,2,2,3]
+    bottom[info[1] - i] += bottom[info[1] - i + 1]; //뒤에서부터 누적합 구하기(석순)
+    top[i] += top[i - 1]; // 앞에서부터 부분합 구하기 (종유석)
   }
   let min = 2000000;
   let cnt = 0;
