@@ -19,8 +19,6 @@ rl.on("line", (line) => {
   count -= 1;
 });
 
-// 석순 -> 구간-1 이상인게 다 충돌
-
 rl.on("close", () => {
   let bottom = new Array(info[1] + 1).fill(0);
   let top = new Array(info[1] + 1).fill(0);
