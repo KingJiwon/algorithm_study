@@ -31,6 +31,5 @@ function solution(k, dungeons) {
     result.push(count);
   });
 
-  // 가장 많이 진행하는 경우를 return
   return Math.max(...result);
 }
