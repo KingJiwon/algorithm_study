@@ -78,8 +78,6 @@ rl.on("close", () => {
     }
   }
 
-  console.log(visited);
-  console.log(countedPainting);
   console.log(Math.max(...countedArea));
   process.exit();
 });
