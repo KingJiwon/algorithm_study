@@ -64,7 +64,6 @@ rl.on("close", () => {
       }
     }
     if (area !== 0) {
-      //영역의 넓이가 0 이 아니면(그림이 있으면)
       countedPainting += 1;
       countedArea.push(area);
     }
